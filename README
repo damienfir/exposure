@@ -30,6 +30,11 @@ Photo management tool for Linux using OpenCL.
     - ratings
     - clipped highlights & shadows
 - color management (SampleICC)
+- tagging
+
+
+## ideas
+- arrange by folder, but able to view all the pictures at once
 
 
 ## filters
