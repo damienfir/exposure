@@ -1,0 +1,3 @@
+[submodule "lib/OpenCLIPP"]
+	path = lib/OpenCLIPP
+	url = https://github.com/CRVI/OpenCLIPP.git
