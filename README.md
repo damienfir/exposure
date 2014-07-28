@@ -7,7 +7,7 @@ Photo management tool for Linux using OpenCL.
 - import
     - from camera (libgphoto)
     - from folder
-- demosaic raw (dcraw)
+- demosaic raw (dcraw) [ok]
 - image processing filters (OpenCL-based IP library: CLIPP)
     - white balance
     - exposure
