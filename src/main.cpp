@@ -1,22 +1,20 @@
-#include "GUI.h"
-#include "Image.h"
+#include "gui/window.h"
+/* #include "image.h" */
+/* #include "image_filter.h" */
 
 
 int main(int argc, char *argv[])
 {
-    /* gtk_init(&argc, &argv); */
-
-    /* GUI gui; */
-
-    /* if(gui.build()) { */
-    /*     return 1; */
-    /* } */
-
-    /* gui.run(); */
-
-    Image im("IMG_5398.CR2");
-    im.load();
+    /* Image im("IMG_5398.CR2"); */
+    /* im.load(); */
     /* im.load_thumb(); */
     
-    return 0;
+    /* ImageFilter imfilter; */
+    /* imfilter.blur(); */
+
+    Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(argc, argv, "");
+
+    Window window;
+
+    return app->run(window);
 } 

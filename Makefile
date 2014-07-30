@@ -1,8 +1,10 @@
 TARGET = exposure
 CC = g++
-LIBS = gtk+-3.0 libexif
-CFLAGS += -g `pkg-config --cflags ${LIBS}` -I./lib/
+LIBS = gtkmm-3.0 libexif #opencv
+CFLAGS += -g `pkg-config --cflags ${LIBS}` -I./lib/ -I./src/
 LDFLAGS += `pkg-config --libs ${LIBS}`
+
+# LDFLAGS += -L./lib/OpenCLIPP/ -lOpenCLIPP-C++
 
 
 SOURCES+=$(shell find src/ -iname '*.cpp')
