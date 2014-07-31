@@ -37,6 +37,10 @@ ImageThumbnail* ImageIO::load_thumb(const char* filename)
     int w,h,c;
     uint8_t* data = stbi_load(filename, &w, &h, &c, 0);
 
+    if (!data) {
+        cout << "error loading image" << endl;
+    }
+
     ImageThumbnail* im = new ImageThumbnail(data, w, h, c);
     return im;
 

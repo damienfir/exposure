@@ -10,13 +10,15 @@
 class GalleryView: public Gtk::FlowBox
 {
 public:
-    GalleryView (Gtk::Window*);
+    GalleryView (Gtk::Container*);
     virtual ~GalleryView ();
 
-    void add_items(Collection);
+    void update_items();
 
 private:
-    Gtk::Window* _parent;
+    Gtk::Container* _parent;
+    Gtk::ScrolledWindow* _scrolled;
+    Collection _collection;
 };
 
 #endif /* GALLERY_VIEW_H */

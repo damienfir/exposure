@@ -2,22 +2,14 @@
 
 #include "gallery_view.h"
 
-#include "collection.h"
-#include "image/image_thumbnail.h"
-#include "image/image_io.h"
-
 
 Window::Window()
 {
-    GalleryView* gallery = Gtk::manage(new GalleryView(this));
+    set_title("exposure");
 
-    Collection col;
-    for (int i = 0; i < 1; ++i)
-    {
-        ImageThumbnail* im = ImageIO::load_thumb("media/IMG_5398.thumb.jpg");
-        col.push_back(im);
-    }
-    gallery->add_items(col);
+    GalleryView* gallery = Gtk::manage(new GalleryView((Gtk::Container*)this));
+
+    show_all_children();
 }
 
 Window::~Window()

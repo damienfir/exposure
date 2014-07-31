@@ -28,5 +28,5 @@ int Image::get_size()
 
 uint8_t* Image::get_data()
 {
-    
+    return _data;    
 }
