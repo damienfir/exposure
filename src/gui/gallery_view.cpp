@@ -3,21 +3,16 @@
 #include <iostream>
 #include "image_area.h"
 
-#include "image/image_io.h"
-
-
-using namespace std;
 
 GalleryView::GalleryView(Gtk::Container* parent):
     _parent(parent)
 {
-
     _scrolled = Gtk::manage(new Gtk::ScrolledWindow());    
     _scrolled->add(*this);
 
     _parent->add(*_scrolled);
 
-    update_items();
+    _handler = new GalleryHandler(this);
 }
 
 
@@ -27,9 +22,16 @@ GalleryView::~GalleryView()
 }
 
 
+void GalleryView::set_signals()
+{
+    signal_show().connect(sigc::mem_fun(_handler, &GalleryHandler::show));
+}
+
+
 void GalleryView::set_collection(Collection* collection)
 {
     _collection = collection;
+    _collection->load_images();
 }
 
 

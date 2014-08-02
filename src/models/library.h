@@ -14,6 +14,7 @@ public:
 
     void load();
     void store();
+    Collection* get_collection(int);
 
 private:
     const char* _library_file;

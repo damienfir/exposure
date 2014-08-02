@@ -47,6 +47,11 @@ void Library::store()
 }
 
 
+Collection* Library::get_collection(int index)
+{
+    return _collections[index];
+}
+
 /*
 - path relative to base folder (or absolute)
 - collection contains pictures from everywhere
