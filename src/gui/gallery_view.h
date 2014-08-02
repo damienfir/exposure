@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "models/collection.h"
+#include "handlers/handler.h"
 
 
 class GalleryView: public Gtk::FlowBox
@@ -13,13 +14,14 @@ public:
     GalleryView (Gtk::Container*);
     virtual ~GalleryView ();
 
-    void set_collection(Collection*);
-    void update_items();
+    void update_items(Collection*);
 
-private:
+protected:
+    void set_signals();
+
     Gtk::Container* _parent;
     Gtk::ScrolledWindow* _scrolled;
-    Collection* _collection;
+    Handler* _handler;
 };
 
 #endif /* GALLERY_VIEW_H */

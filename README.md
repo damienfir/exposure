@@ -18,9 +18,8 @@ Photo management tool for Linux using OpenCL.
     - vignetting
     - color balance
     - B&W
-- gui (gtk3)
+- gui (gtk3, gtkmm)
     - possibly custom theme
-    - Glade to build interface
     - keyboard shortcuts
 - export (libjpeg, libpng, libtiff)
 - exif (libexif, Exiv2)

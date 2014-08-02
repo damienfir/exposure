@@ -1,15 +1,30 @@
 #include "library.h"
 
 #include <jansson.h>
+#include <iostream>
+
+
+Library* Library::_instance = NULL;
 
 
 Library::Library()
 {
     _library_file = "library.json";
+    _instance = this;
 }
+
 
 Library::~Library()
 {
+}
+
+
+Library* Library::get_instance()
+{
+      if (_instance == NULL) {
+          _instance = new Library();
+      }
+      return _instance;
 }
 
 

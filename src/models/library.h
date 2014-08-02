@@ -11,6 +11,7 @@ class Library
 public:
     Library ();
     virtual ~Library ();
+    static Library* get_instance();
 
     void load();
     void store();
@@ -19,6 +20,8 @@ public:
 private:
     const char* _library_file;
     std::vector<Collection*> _collections;
+
+    static Library* _instance;
 };
 
 #endif /* LIBRARY_H */
