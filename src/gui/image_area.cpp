@@ -24,8 +24,7 @@ ImageArea::~ImageArea()
 void ImageArea::set_image(Image* image)
 {
     try {
-        int row_stride = image->width * 3;
-        _pixbuf = Gdk::Pixbuf::create_from_data(image->get_data(), Gdk::COLORSPACE_RGB, false, 8, image->width, image->height, row_stride);
+        _pixbuf = Gdk::Pixbuf::create_from_data(image->accessPixels(), Gdk::COLORSPACE_RGB, false, 8, image->getWidth(), image->getHeight(), image->getScanWidth());
     }
     catch(const Gdk::PixbufError& ex) {
         std::cerr << "PixbufError: " << ex.what() << std::endl;

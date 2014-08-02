@@ -1,8 +1,14 @@
 TARGET = exposure
 CC = g++
-LIBS = gtkmm-3.0 libexif #opencv
+
+LIBS = gtkmm-3.0\
+	   libexif\
+	   jansson\
+	   # opencv
+
 CFLAGS += -g `pkg-config --cflags ${LIBS}` -I./lib/ -I./src/
 LDFLAGS += `pkg-config --libs ${LIBS}`
+LDFLAGS += -lfreeimageplus
 
 # LDFLAGS += -L./lib/OpenCLIPP/ -lOpenCLIPP-C++
 
@@ -21,3 +27,4 @@ $(TARGET): $(OBJECTS)
 
 clean:
 	rm src/*.o
+	rm src/**/*.o

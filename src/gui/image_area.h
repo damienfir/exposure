@@ -3,7 +3,7 @@
 
 #include <gtkmm.h>
 
-#include "image/image.h"
+#include "models/image.h"
 
 
 class ImageArea: public Gtk::DrawingArea

@@ -11,11 +11,13 @@
 #include <libexif/exif-data.h>
 
 
+
 using namespace std;
 
 
 ImageIO::ImageIO()
-{}
+{
+}
 
 
 ImageIO::~ImageIO()
@@ -29,25 +31,6 @@ void ImageIO::load()
     sprintf(cmd, "./lib/dcraw/dcraw -c %s", _filename);
     FILE* dcraw = popen(cmd, "r");
     read_ppm(dcraw);
-}
-
-
-ImageThumbnail* ImageIO::load_thumb(const char* filename)
-{
-    int w,h,c;
-    uint8_t* data = stbi_load(filename, &w, &h, &c, 0);
-
-    if (!data) {
-        cout << "error loading image" << endl;
-    }
-
-    ImageThumbnail* im = new ImageThumbnail(data, w, h, c);
-    return im;
-
-    /* char cmd[256]; */
-    /* sprintf(cmd, "./lib/dcraw/dcraw -e -c %s", _filename); */
-    /* FILE* dcraw = popen(cmd, "r"); */
-    /* read_jpeg(dcraw); */
 }
 
 

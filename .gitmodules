@@ -4,3 +4,9 @@
 [submodule "lib/stb"]
 	path = lib/stb
 	url = https://github.com/nothings/stb.git
+[submodule "lib/jansson"]
+	path = lib/jansson
+	url = https://github.com/akheron/jansson.git
+[submodule "lib/tinydir"]
+	path = lib/tinydir
+	url = https://github.com/cxong/tinydir.git

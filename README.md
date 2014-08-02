@@ -25,12 +25,13 @@ Photo management tool for Linux using OpenCL.
 - export (libjpeg, libpng, libtiff)
 - exif (libexif, Exiv2)
 - xmp for non-destructive editing (rapidxml, pugixml)
-- file browser (standard library)
+- file browser (tinydir)
 - image viewer with annotations (cairo)
     - ratings
     - clipped highlights & shadows
 - color management (SampleICC)
 - tagging
+- storing library (jansson)
 
 
 ## ideas

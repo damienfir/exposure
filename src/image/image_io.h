@@ -4,8 +4,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "image.h"
-#include "image_thumbnail.h"
+#include "models/image.h"
 
 
 class ImageIO
@@ -15,7 +14,6 @@ public:
     virtual ~ImageIO();
 
     void load();
-    static ImageThumbnail* load_thumb(const char*);
     void read_ppm(FILE*);
     void read_jpeg(FILE*);
     void read_exif();
