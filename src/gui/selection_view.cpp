@@ -1,17 +1,18 @@
 #include "selection_view.h"
 
-#include "handlers/selection_handler.h"
+#include "ctrl/selection_controller.h"
+
+#include <iostream>
 
 
 SelectionView::SelectionView(Gtk::Container* parent):
     _parent(parent)
 {
-    Gtk::VBox* vbox = Gtk::manage(new Gtk::VBox());
-    Gtk::Button* import_btn = Gtk::manage(new Gtk::Button("import folder"));
-    vbox->pack_start(*import_btn, Gtk::PACK_SHRINK);
-    _parent->add(*vbox);
+    SelectionController* controller = new SelectionController(this);
 
-    _handler = new SelectionHandler(this);
+    Gtk::Button* import_btn = Gtk::manage(new Gtk::Button("import folder"));
+    this->pack_start(*import_btn, Gtk::PACK_SHRINK);
+    _parent->add(*this);
 }
 
 

@@ -1,6 +1,8 @@
 #include "gui/window.h"
 #include "models/library.h"
 
+#include <iostream>
+
 
 int main(int argc, char *argv[])
 {

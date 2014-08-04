@@ -6,7 +6,7 @@ LIBS = gtkmm-3.0\
 	   jansson\
 	   # opencv
 
-CFLAGS += -g `pkg-config --cflags ${LIBS}` -I./lib/ -I./src/
+CFLAGS += -g `pkg-config --cflags ${LIBS}` -I./lib/ -I./src/ -std=c++11
 LDFLAGS += `pkg-config --libs ${LIBS}`
 LDFLAGS += -lfreeimageplus
 

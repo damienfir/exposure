@@ -11,6 +11,7 @@ Library::Library()
 {
     _library_file = "library.json";
     _instance = this;
+    _publisher = Publisher::get_instance();
 }
 
 
@@ -42,6 +43,7 @@ void Library::load()
         col->set_name(json_string_value(name));
         col->set_path(json_string_value(path));
         _collections.push_back(col);
+        std::cout << "added collection: " << json_string_value(name) << std::endl;
     }
 }
 
@@ -67,17 +69,16 @@ Collection* Library::get_collection(int index)
     return _collections[index];
 }
 
-/*
-- path relative to base folder (or absolute)
-- collection contains pictures from everywhere
-- pictures can belong to multiple collections
 
-[
-  {
-    'name': 'venice',
-    'path': '/data/photography/files/2014/06/venice/'
-  }
-]
+Collection* Library::get_current_collection()
+{
+    return _current_collection;
+}
 
 
-*/
+void Library::change_collection(int index)
+{
+    _current_collection = _collections[index];
+    _publisher->notify(new CollectionChangedNotification(_current_collection));
+}
+

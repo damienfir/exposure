@@ -3,10 +3,8 @@
 
 #include <gtkmm.h>
 
-#include "handlers/handler.h"
 
-
-class SelectionView: public Gtk::Container
+class SelectionView: public Gtk::VBox
 {
 public:
     SelectionView(Gtk::Container*);
@@ -14,8 +12,7 @@ public:
 
 private:
     Gtk::Container* _parent;
-
-    Handler* _handler;
+    Gtk::VBox* _vbox;
 };
 
 #endif /* SELECTION_VIEW_H */

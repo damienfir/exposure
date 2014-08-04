@@ -5,23 +5,23 @@
 #include <vector>
 
 #include "models/collection.h"
-#include "handlers/handler.h"
+
+#include "notifications.h"
 
 
-class GalleryView: public Gtk::FlowBox
+class GalleryView: public Gtk::FlowBox, public Subscriber
 {
 public:
     GalleryView (Gtk::Container*);
     virtual ~GalleryView ();
 
     void update_items(Collection*);
+    void on_notify(Notification*);
+    void on_notify(CollectionChangedNotification*);
 
 protected:
-    void set_signals();
-
     Gtk::Container* _parent;
     Gtk::ScrolledWindow* _scrolled;
-    Handler* _handler;
 };
 
 #endif /* GALLERY_VIEW_H */

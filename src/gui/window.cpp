@@ -17,9 +17,7 @@ Window::Window()
 
     paned->add1(*align1);
     paned->add2(*align2);
-
     add(*paned);
-
     show_all_children();
 }
 
